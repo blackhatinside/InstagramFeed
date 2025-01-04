@@ -1,0 +1,31 @@
+To learn Backend Development with Django by
+	# building a Blog Application
+		# # Create a Author Model
+		# # Create a Post Model
+		# # Create a Comment Model
+		# # Perform CRUD operations on Author, Post, Comment using APIs
+
+'''
+
+	Author:Post		1:M relationship
+	Post:Comment	1:M relationship
+	Author:Comment  1:M relationship
+
+
+	Author:
+		name
+		email
+
+	Post:
+		author (who posted)
+		title
+		content
+		created_at
+
+	Comment:
+		post (under which post)
+		author (who commented)
+		content
+		created_at
+
+'''
