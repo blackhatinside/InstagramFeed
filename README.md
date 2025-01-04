@@ -38,3 +38,13 @@ in cmd, add an author
 	from social.models import Author
 	Author.objects.create(name="Adi", email="adi@gmail.com")
 ```
+
+```
+
+# to delete
+http://127.0.0.1:8000/ --> http://127.0.0.1:8000/authors/ --> http://127.0.0.1:8000/authors/1/ --> CLICK 'DELETE' button -->  http://127.0.0.1:8000/authors/ --> 
+
+# to update
+http://127.0.0.1:8000/comments/3/ --> CHANGE text in 'Content' field and click 'PUT' button
+
+```
