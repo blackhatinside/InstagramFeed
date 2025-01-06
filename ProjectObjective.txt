@@ -9,8 +9,7 @@ To learn Backend Development with Django by
 
 	Author:Post		1:M relationship
 	Post:Comment	1:M relationship
-	Author:Comment  1:M relationship
-
+	Author:Comment  1:M relationship6
 
 	Author:
 		name

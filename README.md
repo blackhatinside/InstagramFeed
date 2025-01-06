@@ -48,3 +48,20 @@ http://127.0.0.1:8000/ --> http://127.0.0.1:8000/authors/ --> http://127.0.0.1:8
 http://127.0.0.1:8000/comments/3/ --> CHANGE text in 'Content' field and click 'PUT' button
 
 ```
+
+
+# DOCKER COMMANDS
+to restart the docker container
+`docker-compose up`
+
+to rebuild and restart the docker container
+`docker-compose up --build`
+
+to stop the docker container
+`docker-compose down`
+
+
+# IMPLEMENTATION NOTES
+CRUD operations are implemented through Django REST framework's ModelViewSet
+
+CRUD operations should be implemented through Django REST framework's Generic views
