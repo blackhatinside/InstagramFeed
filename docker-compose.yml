@@ -1,8 +1,27 @@
-version: '3'               # Docker Compose file format version
-services:                  # List of containers/services
- web:                    # Service name for Django app
-   build: .             # Build using Dockerfile in current directory
-   ports:
-     - "8000:8000"      # Map container port 8000 to host port 8000
-   volumes:
-     - .:/app           # Mount current directory to /app in container for live code updates
+version: '3'                        # Docker Compose file format version
+
+services:                           # List of containers/services
+  web:                              # Service name for Django app
+    build: .                        # Build using Dockerfile in current directory
+    ports:
+      - "8000:8000"                 # Map container port 8000 to host port 8000
+    volumes:
+      - .:/app                      # Mount current directory to /app in container for live code updates
+
+  rabbitmq:                         # Service name for RabbitMQ
+    image: rabbitmq:3-management    # RabbitMQ image with management UI
+    container_name: rabbitmq
+    ports:
+      - '5672:5672'                 # Default RabbitMQ port
+      - '15672:15672'               # RabbitMQ Management UI port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  celery:
+    build: .
+    command: celery -A InstagramFeed worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - rabbitmq

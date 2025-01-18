@@ -64,4 +64,13 @@ to stop the docker container
 # IMPLEMENTATION NOTES
 CRUD operations are implemented through Django REST framework's ModelViewSet
 
+	Viewsets are typically registered with a router (DefaultRouter, SimpleRouter), which automatically generates the URL patterns for all the HTTP methods (GET, POST, PUT, DELETE, etc.)
+
 CRUD operations should be implemented through Django REST framework's Generic views
+
+
+# Testing Files
+publisher.py
+sender.py
+receiver.py
+

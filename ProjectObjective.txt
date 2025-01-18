@@ -28,3 +28,29 @@ To learn Backend Development with Django by
 		created_at
 
 '''
+
+
+CREATE: POST /authors/, /posts/, /comments/
+READ: GET /authors/, /posts/, /comments/
+UPDATE: PUT/PATCH /authors/{id}/, /posts/{id}/, /comments/{id}/
+DELETE: DELETE /authors/{id}/, /posts/{id}/, /comments/{id}/
+
+
+CRUD Mapping:
+Operation		View to Use						HTTP Method
+Create			CreateAPIView					POST
+Retrieve		RetrieveUpdateDestroyAPIView	GET
+Update			RetrieveUpdateDestroyAPIView	PATCH/PUT
+Delete			RetrieveUpdateDestroyAPIView	DELETE
+
+
+
+
+Celery + RabbitMQ: Everytime an author posts a comment in a post, we simulate email notification sending to demonstrate async processing of tasks
+
+
+Example Views:
+
+
+Username: celery
+Password: rabbitmqpass

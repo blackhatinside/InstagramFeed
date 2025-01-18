@@ -10,6 +10,8 @@ class Author(models.Model):
 		return self.name
 
 class Post(models.Model):
+	# Post --> Author: 1:1
+	# Author --> Post: 1:M
 	author = models.ForeignKey(Author, on_delete=models.CASCADE)
 	title = models.CharField(max_length=200)
 	content = models.TextField()
@@ -19,6 +21,8 @@ class Post(models.Model):
 		return self.title
 
 class Comment(models.Model):
+	# Comment --> Post: 1:1
+	# Post --> Comment: 1:M
 	post = models.ForeignKey(Post, on_delete=models.CASCADE)
 	author = models.ForeignKey(Author, on_delete=models.CASCADE)
 	content = models.TextField()
